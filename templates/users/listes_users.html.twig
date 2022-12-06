@@ -1,0 +1,26 @@
+
+ {% extends 'base.html.twig' %}
+ {% block title %}Liste des users{% endblock %}
+    {% block body %}
+    <div class="container mt-5">
+        <div class="row">
+            {% for user in users %}
+                <div class="col-sm-4">
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">User {{ user.id }}</h5>
+                            <li class="list-group-item">Nom :  {{ user.nom }}</li>
+                            <li class="list-group-item">Prénom : {{ user.prenom }}</li>
+                            <li class="list-group-item">Age : {{ user.age }}</li>
+                            <li class="list-group-item">Email : {{ user.email }}</li>
+                            </br>
+                            <a type="button" class="btn btn-outline-light text-dark" href="infosUser/{{ user.id }}">Selectionner</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+    {% endblock %}
+
+
+
+
