@@ -20,12 +20,12 @@ class UserController extends AbstractController
     }
 
 
-    #[Route('/user/listes_users', name: 'app_user_listesusers', methods: 'GET')]   
+    #[Route('/user/listes_users', name: 'app_user_listesusers', methods: 'GET')]     // Juste un test 
     public function listesUsers(ManagerRegistry $doctrine)
     {
         $entityManager = $doctrine->getManager();
 
-        $repository = $entityManager->getRepository(User::class); // requete pour trouve le user via l'id mis dans l'url
+        $repository = $entityManager->getRepository(User::class); // requete pour lister les users 
         $users= $repository->findAll();
       
        
